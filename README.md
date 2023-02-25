@@ -16,7 +16,7 @@
 
 
 ```bash
-$url="https://bonben365.com/scripts/add-store.ps1"
+$url="https://raw.githubusercontent.com/bonben365/add-store-win-ltsc/main/add-store.ps1"
 Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString($url))
 ```
