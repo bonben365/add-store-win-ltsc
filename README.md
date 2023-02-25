@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- Run the script as administrator
+- Run the script as administrator using PowerShell
 - Windows 10 version 1709 and later
   
 ## Installation
