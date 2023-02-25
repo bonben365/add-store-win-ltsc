@@ -15,7 +15,9 @@ cmd.exe /c .\add-store.cmd -nonewline
 # Checking installed apps
 $packages = @("Microsoft.VCLibs","DesktopAppInstaller","WindowsStore")
 $report = ForEach ($package in $packages){Get-AppxPackage -Name *$package* | select Name,Version,Status }
+write-host "Installed packages:"
 $report
 
 # Cleanup
+Set-Location "$env:temp"
 Remove-Item $env:temp\kms -Recurse -Force
