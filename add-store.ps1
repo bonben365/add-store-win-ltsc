@@ -1,3 +1,15 @@
+<#
+=============================================================================================
+Name:           Install Windows Store for Windows 10 Enterprise LTSC
+Description:    This script Installs Windows Store for Windows 10 Enterprise LTSC
+Version:        1.0
+Date :          26/2/2023
+Website:        https://bonben365.com
+Script by:      https://github.com/bonben365
+For detailed script execution: https://bonben365.com/how-to-install-windows-store-for-windows-10-enterprise-ltsc/
+============================================================================================
+#>
+
 if (([Security.Principal.WindowsIdentity]::GetCurrent().Groups | Select-String 'S-1-5-32-544').count -eq 0) {    
     Write-Host "Error: Run the script as administrator"
     Write-Host "Exitting..."
