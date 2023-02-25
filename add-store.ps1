@@ -16,7 +16,7 @@ cmd.exe /c .\add-store.cmd -nonewline
 $packages = @("Microsoft.VCLibs","DesktopAppInstaller","WindowsStore")
 $report = ForEach ($package in $packages){Get-AppxPackage -Name *$package* | select Name,Version,Status }
 write-host "Installed packages:"
-$report
+$report | format-table
 
 # Cleanup
 Set-Location "$env:temp"
