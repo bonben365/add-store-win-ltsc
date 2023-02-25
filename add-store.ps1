@@ -12,10 +12,10 @@ Expand-Archive .\microsoftstore-win-ltsc.zip -Force -ErrorAction:SilentlyContinu
 Set-Location "$env:temp\kms\microsoftstore-win-ltsc"
 cmd.exe /c .\add-store.cmd -nonewline
 
-# Checking install app
+# Checking installed apps
 $packages = @("Microsoft.VCLibs","DesktopAppInstaller","WindowsStore")
 $report = ForEach ($package in $packages){Get-AppxPackage -Name *$package* | select Name,Version,Status }
-Write-Host "Your Windows edition: $report"
+$report
 
 # Cleanup
 Remove-Item $env:temp\kms -Recurse -Force
