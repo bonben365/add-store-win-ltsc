@@ -18,7 +18,7 @@
 
 ```ps
 #Allow system to running a script
-#https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy
+#https://go.microsoft.com/fwlink/?LinkID=135170
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
 #Download and run the PowerShell script
