@@ -7,7 +7,8 @@
 ## Requirements
 
 - Run the script as administrator using PowerShell
-- Windows 10 version 1709 and later
+- Windows 10 version 1709 and later.
+- Tested working on LTSC 2019 and LTSC 2021.
   
 ## Installation
 
