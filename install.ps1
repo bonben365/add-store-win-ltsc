@@ -25,17 +25,21 @@ if ([System.Environment]::OSVersion.Version.Build -lt 16299) {
 }
 
 # Create temporary directory
-$null = New-Item -Path $env:temp\kms -ItemType Directory -Force
-Set-Location $env:temp\kms
+$null = New-Item -Path $env:temp\temp -ItemType Directory -Force
+Set-Location $env:temp\temp
 
 # Download required files
+Write-Host
+Write-Host ============================================================
+Write-Host Downloading dependency packages...
+Write-Host ============================================================
+Write-Host
 $uri = "https://filedn.com/lOX1R8Sv7vhpEG9Q77kMbn0/bonben365.com/Zip/microsoftstore-win-ltsc.zip"
-
-$null = Invoke-WebRequest -Uri $uri -OutFile "microsoftstore-win-ltsc.zip" -ErrorAction:SilentlyContinue
+(New-Object Net.WebClient).DownloadFile($uri, "$env:temp\temp\microsoftstore-win-ltsc.zip")
 
 # Extract downloaded file then run the script
 Expand-Archive .\microsoftstore-win-ltsc.zip -Force -ErrorAction:SilentlyContinue
-Set-Location "$env:temp\kms\microsoftstore-win-ltsc"
+Set-Location "$env:temp\temp\microsoftstore-win-ltsc"
 
 if ([System.Environment]::Is64BitOperatingSystem -like "True") {
     $arch = "x64"
@@ -108,7 +112,7 @@ $report | format-table
 
 # Cleanup
 Set-Location "$env:temp"
-Remove-Item $env:temp\kms -Recurse -Force
+Remove-Item $env:temp\temp -Recurse -Force
 
 Write-Host
 Write-Host ============================================================
