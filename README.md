@@ -21,7 +21,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 $url="https://raw.githubusercontent.com/bonben365/add-store-win-ltsc/main/install.ps1"
 iex ((New-Object System.Net.WebClient).DownloadString($url))
 ```
-➡️Please inspect https://raw.githubusercontent.com/bonben365/add-store-win-ltsc/main/add-store.ps1 prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of any script from the internet you are not familiar with.
+➡️Please inspect https://raw.githubusercontent.com/bonben365/add-store-win-ltsc/main/install.ps1 prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of any script from the internet you are not familiar with.
 
 ## Screenshots
 
